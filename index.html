@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="emailApp">
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/email.css">
+  <meta charset=utf-8 />
+  <title>Simple Email List</title>
+</head>
+<body ng-controller="EmailCtrl">
+		<p>
+			This is a simple example to show how AngularJS can collect form information and display it immediately, as well as delete it just as easily.
+		</p>
+		<p ng-show="emails.length">Number of Emails: {{emails.length}}</p>
+  <ul class="email-list">
+    <ul ng-repeat="email in emails">
+      <li class="emailList">{{email}}<a ng-href="#" ng-click="deleteEmail($index)">×</a></li>
+    </ul>
+    <li class="email-list">
+      <form action="" ng-submit="addEmails()">
+        <input type="text" ng-model="email" placeholder="add an email...">
+      </form>
+    </li>
+  </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+<script type="text/javascript" src="/js/email.js"></script>
+</body>
+</html>
